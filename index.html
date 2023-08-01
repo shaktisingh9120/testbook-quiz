@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Quiz App By Sunny</title>
+  <link rel="icon" href="favicon.ico">
+  <!-- external stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Quiz App -->
+  <div class="quizWrapper">
+    <div id="show">
+      <img src="testbooklogo.png" alt="tesbook-logo" width="100px" height="100px">
+      <div>
+        <h1 id="userName">Hello User!</h1>
+        <h3>Enter your name to continue the Quiz.</h3>
+        <input type="text" name="user" value="" placeholder="ENTER YOUR NAME...">
+        <button class="enterBtn" type="submit" name="button">ENTER</button>
+        <p class="userInstruction">You will have 10 seconds to answer each questions</p>
+      </div>
+      <hr>
+      <div class="category-div">
+        <h1>Select Category</h1>
+        <button class="categoryBtn" type="button" name="html" onclick="quizStart(name)">HTML</button>
+        <button class="categoryBtn" type="button" name="css" onclick="quizStart(name)">CSS</button>
+        <br>
+        <button class="categoryBtn" type="button" name="javascript" onclick="quizStart(name)">Javascript</button>
+        <button class="categoryBtn" type="button" name="bootstrap" onclick="quizStart(name)">Bootstrap</button>
+      </div>
+    </div>
+
+    <!-- Quiz Container -->
+    <div id="quiz-container" style="display:none;">
+      <h3 id="quiz-header"></h3>
+      <!-- Timer and score div -->
+      <div class="timer-score-container">
+        <div class="timer">
+          <div class="timer-box">
+            <p><span id="timer"></span></p>
+          </div>
+        </div>
+        <div class="score">
+          <p>SCORE: <b><span id="score"></span></b></p>
+        </div>
+      </div>
+      <!-- Question Box -->
+      <div id="question-container">
+        <div id="ques-no-box">
+          <h2 id="ques-number"></h2>
+        </div>
+        <div id="question-box"></div>
+      </div>
+      <!-- Options div -->
+      <div>
+        <button class="option" type="button" value="1"></button>
+        <button class="option" type="button" value="2"></button>
+        <br>
+        <button class="option" type="button" value="3"></button>
+        <button class="option" type="button" value="4"></button>
+      </div>
+      <!-- Next button and Result button -->
+      <button id="next" type="button">Next</button>
+      <button class="resultBtn" id="resultBtn" type="button" style="display: none">Result</button>
+    </div>
+
+    <!-- Quiz Result div -->
+    <div id="quizResult" style="display: none">
+      <h1>Quiz Result</h1>
+      <p><b><span id="user"></span></b> your result is:</p>
+      <p>Total time taken : <b><span id="timeTaken"></span></b></p>
+      <p>Total question : <b><span>10</span></b></p>
+      <p>Attempt : <b><span id="attemptedQues"></span></b></p>
+      <p>Correct : <b><span id="correctQues"></span></b></p>
+      <p>Wrong : <b><span id="wrongQues"></span></b></p>
+      <p>Percentage : <b><span id="percenQues"></span></b></p>
+      <button id="restartQuiz" class="enterBtn">Start Again</button>
+      <button id="goHome" class="enterBtn">Go to Home</button>
+    </div>
+  </div>
+  <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
